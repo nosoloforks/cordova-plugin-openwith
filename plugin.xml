@@ -63,6 +63,30 @@ SOFTWARE.
 
     <!-- Info.plist -->
     <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+      <key>CFBundleDocumentTypes</key>
+      <array>
+        <dict>
+          <key>CFBundleTypeName</key>
+          <string>PDF</string>
+          <key>LSHandlerRank</key>
+          <string>Default</string>
+          <key>LSItemContentTypes</key>
+          <array>
+            <string>public.data</string>
+          </array>
+        </dict>
+        <dict>
+          <key>CFBundleTypeName</key>
+          <string>Image</string>
+          <key>LSHandlerRank</key>
+          <string>Default</string>
+          <key>LSItemContentTypes</key>
+          <array>
+            <string>public.image</string>
+          </array>
+        </dict>
+      </array>
+      <key>CFBundleURLTypes</key>
       <array>
         <dict>
           <key>CFBundleURLName</key>
@@ -109,12 +133,11 @@ SOFTWARE.
       <intent-filter>
         <!-- See https://developer.android.com/guide/topics/manifest/data-element.html -->
         <data android:mimeType="audio/*" />
-        <data android:mimeType="application/*" />
-        <data android:mimeType="video/*" />
-        <data android:mimeType="image/*" />
-        <data android:mimeType="text/*" />
+        <data android:mimeType="application/pdf" />
+        <data android:mimeType="image/jpg" />
+        <data android:mimeType="image/jpeg" />
+        <data android:mimeType="image/png" />
         <action android:name="android.intent.action.SEND" />
-        <action android:name="android.intent.action.SEND_MULTIPLE" />
         <category android:name="android.intent.category.DEFAULT" />
         <category android:name="android.intent.category.BROWSABLE" />
       </intent-filter>
